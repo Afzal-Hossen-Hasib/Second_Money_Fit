@@ -20,12 +20,26 @@ function calculationTotal () {
 
     const balanceText = document.getElementById ('total-balance');
     balanceText.innerText = total;
-
+    
     return total;
 }
 const calculateButton = document.getElementById ('caculate-button').addEventListener ('click', function () {
     calculationTotal ();
-
-    // calculationTotal ();
     
+})
+
+
+function percantage () {
+
+    const parcentText = calculationTotal ();
+    const saveField = document.getElementById ('save-input');
+    const saveValue = parseFloat (saveField.value);
+
+    const saveParcentText = document.getElementById ('save-parcent');
+    saveParcentText.innerText = (parcentText/100) * saveValue;
+}
+
+document.getElementById ('save-button').addEventListener ('click', function () {
+
+    percantage ();
 })
