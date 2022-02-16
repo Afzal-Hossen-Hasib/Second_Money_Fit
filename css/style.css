@@ -21,3 +21,7 @@ body {
     width: 850px;
     height: 800px;
 }
+
+.input-color {
+    background-color: #DCDCDC;
+}
