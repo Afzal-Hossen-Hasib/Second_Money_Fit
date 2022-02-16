@@ -13,15 +13,15 @@
     ------------------------------------------------------------->
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Money</title>
+    <title>Money Fit</title>
 </head>
 
 <body>
 
      <!------------------------ Header Section Start  -----------------
     ------------------------------------------------------------------->
-    <header class="container-fluid d-flex align-items-center justify-content-center my-5">
-        <div class="title">Money-Master</div>
+    <header class="container-fluid d-flex align-items-center justify-content-center mt-2 mb-4">
+        <div class="title">Money Fit</div>
         <div class="money">
             <img src="image/money-sack.png" alt="">
         </div>
@@ -29,27 +29,28 @@
      <!------------------------ Header Section End  -----------------
     ------------------------------------------------------------------->
 
-    
+
     <!------------------------ income, Expenses And Saving Section Start  ----------------
     -------------------------------------------------------------------------------------->
     <main>
         <section class="container-fluid">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="income-image pe-5 ps-5">
-                        <img src="image/pexels-karolina-grabowska-4386339.jpg" alt="">
+                    <div class="ps-5 p-3">
+                        <img class="w-100" src="image/money.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-md-6 text-center">
                     
                      <!------------------------ Income Part Start  --------------------
                     ------------------------------------------------------------------->
-                        <h3 class="fs-2 fw-bold pb-4">Income</h3>
+                        <h3 class="fs-2 fw-bold pb-4 pt-5">Income</h3>
                         <div class="d-flex w-50 m-auto justify-content-between align-items-center pb-4">
                             <span class="fs-5">Income :</span> <input id="income-field" class="form-control w-75 input-color" type="text">
                         </div>
                     <!------------------------ Income Part End  -----------------------
                     ------------------------------------------------------------------->
+
 
                     <!------------------------ Expenses Part Start  -------------------
                     ------------------------------------------------------------------->
@@ -67,19 +68,20 @@
                             <span class="fs-5">Clothes :</span> <input id="clothe-field" class="form-control w-75 input-color" type="text">
                         </div>
 
-                        <button id="caculate-button" type="button" class="btn btn-primary px-5 py-2 fs-5">Calculate</button>
+                        <button id="caculate-button" type="button" class="btn btn-info px-5 py-2 fs-5 fw-bold">Calculate</button>
                         
                         <p class="pt-5 fs-3 fw-bold"> Total Expenses: <span id="total-expense">00</span></p>
                         <p class="fs-3 fw-bold"> Balance: <span id="total-balance">00</span></p>
                     <!------------------------ Expenses Part End  ---------------------
                     ------------------------------------------------------------------->  
                     
+
                     <!------------------------ Saving Part Start  ---------------------
                     ------------------------------------------------------------------->
                         <div class="d-flex w-50 justify-content-evenly align-items-center py-4 m-auto">
                             <span class="fs-5">Save :</span> <input class="form-control w-25 input-color" type="text"> 
                             <span class="fs-5">%</span>
-                            <button type="button" class="btn btn-primary px-5 py-2 fs-5">Save</button>
+                            <button type="button" class="btn btn-info px-5 py-2 fs-5 fw-bold">Save</button>
                         </div>
                         <p class="fs-4 fw-bold">Saving Amount: <span>00</span> </p>
                         <p class="fs-4 fw-bold">Remaining Balance: <span>00</span> </p>
