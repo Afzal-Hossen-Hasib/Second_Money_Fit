@@ -1,21 +1,23 @@
 /* Google Font  */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap');
 
+/* Body Style  */
 body {
     font-family: 'Poppins', sans-serif;
 }
 
-
+/*Header Part Style  */
 .title {
     font-size: 60px;
     color: #31A5AC;
 }
 
-
 .money img {
     width: 50px;
     height: 50px;
 }
+
+/* Income Part Style  */
 
 .income-image img {
     width: 850px;

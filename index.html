@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap Link  -->
+
+     <!------------------------ Bootstrap Link  -----------------
+    ------------------------------------------------------------->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <!-- Font Awesome Link  -->
-    <script src="https://kit.fontawesome.com/0827079f00.js" crossorigin="anonymous"></script>
-
-    <!-- Stylesheet Link  -->
+    <!------------------------ Stylesheet Link  -----------------
+    ------------------------------------------------------------->
     <link rel="stylesheet" href="css/style.css">
 
     <title>Money</title>
@@ -18,15 +18,20 @@
 
 <body>
 
-    <!-- Title Section  -->
-    <header class="container-fluid d-flex align-items-center justify-content-center">
+     <!------------------------ Header Section Start  -----------------
+    ------------------------------------------------------------------->
+    <header class="container-fluid d-flex align-items-center justify-content-center my-5">
         <div class="title">Money-Master</div>
         <div class="money">
             <img src="image/money-sack.png" alt="">
         </div>
     </header>
+     <!------------------------ Header Section End  -----------------
+    ------------------------------------------------------------------->
 
-    <!-- income Section  -->
+    
+    <!------------------------ income, Expenses And Saving Section Start  ----------------
+    -------------------------------------------------------------------------------------->
     <main>
         <section class="container-fluid">
             <div class="row">
@@ -36,47 +41,66 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-center">
-            
-                        <h3 class="pt-5 pb-4">Income</h3>
+                    
+                     <!------------------------ Income Part Start  --------------------
+                    ------------------------------------------------------------------->
+                        <h3 class="fs-2 fw-bold pb-4">Income</h3>
                         <div class="d-flex w-50 m-auto justify-content-between align-items-center pb-4">
-                            <span>Income :</span> <input class="form-control w-75 input-color" type="text">
+                            <span class="fs-5">Income :</span> <input id="income-field" class="form-control w-75 input-color" type="text">
                         </div>
-                        <h3 class="pt-5 pb-4">Expenses</h3>
+                    <!------------------------ Income Part End  -----------------------
+                    ------------------------------------------------------------------->
+
+                    <!------------------------ Expenses Part Start  -------------------
+                    ------------------------------------------------------------------->
+                        <h3 class="fs-2 fw-bold pt-5 pb-4">Expenses</h3>
 
                         <div class="d-flex w-50 m-auto justify-content-between align-items-center pb-4">
-                            <span>Food :</span> <input class="form-control w-75 input-color" type="text">
+                            <span class="fs-5">Food :</span> <input id="food-field" class="form-control w-75 input-color" type="text">
                         </div>
 
                         <div class="d-flex w-50 m-auto justify-content-between align-items-center pb-4">
-                            <span>Rent :</span> <input class="form-control w-75 input-color" type="text">
+                            <span class="fs-5">Rent :</span> <input id="rent-field" class="form-control w-75 input-color" type="text">
                         </div>
                         
                         <div class="d-flex w-50 m-auto justify-content-between align-items-center pb-4">
-                            <span>Clothes :</span> <input class="form-control w-75 input-color" type="text">
+                            <span class="fs-5">Clothes :</span> <input id="clothe-field" class="form-control w-75 input-color" type="text">
                         </div>
 
-                        <button id="caculate-button" type="button" class="btn btn-primary px-5 py-2">Calculate</button>
+                        <button id="caculate-button" type="button" class="btn btn-primary px-5 py-2 fs-5">Calculate</button>
                         
-                        <p class="pt-5"> Total Expenses: <span>5500</span></p>
-                        <p> Balance: <span>4500</span></p>
-
+                        <p class="pt-5 fs-3 fw-bold"> Total Expenses: <span id="total-expense">00</span></p>
+                        <p class="fs-3 fw-bold"> Balance: <span id="total-balance">00</span></p>
+                    <!------------------------ Expenses Part End  ---------------------
+                    ------------------------------------------------------------------->  
+                    
+                    <!------------------------ Saving Part Start  ---------------------
+                    ------------------------------------------------------------------->
                         <div class="d-flex w-50 justify-content-evenly align-items-center py-4 m-auto">
-                            <span>Save :</span> <input class="form-control w-25 input-color" type="text"> 
-                            <span>%</span>
-                            <button type="button" class="btn btn-primary px-5 py-2">Save</button>
+                            <span class="fs-5">Save :</span> <input class="form-control w-25 input-color" type="text"> 
+                            <span class="fs-5">%</span>
+                            <button type="button" class="btn btn-primary px-5 py-2 fs-5">Save</button>
                         </div>
-                        <p>Saving Amount: <span>2000</span> </p>
-                        <p>Remaining Balance: <span>2500</span> </p>
+                        <p class="fs-4 fw-bold">Saving Amount: <span>00</span> </p>
+                        <p class="fs-4 fw-bold">Remaining Balance: <span>00</span> </p>
+                    <!------------------------ Saving Part End  -----------------------
+                    ------------------------------------------------------------------->
                 </div>
             </div>
         </section>
     </main>
+    <!------------------------ income, Expenses And Saving Section End  ------------------
+    -------------------------------------------------------------------------------------->
 
 
 
-
-<!-- Bootstrap Bundle Js  -->
+<!------------------------ Bootstrap Bundle Link  ---------------
+    ------------------------------------------------------------->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-</body>
 
+<!------------------------ Javascript  --------------------------
+    ------------------------------------------------------------->
+<script src="js/money.js"></script>
+
+</body>
 </html>
