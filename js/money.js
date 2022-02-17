@@ -17,7 +17,7 @@ function calculationTotal () {
 
     const expenseText = document.getElementById ('total-expense');
     expenseText.innerText = foodValue + rentValue + clotheValue;
-
+	
     const balanceText = document.getElementById ('total-balance');
     balanceText.innerText = total;
     
@@ -34,12 +34,20 @@ function percantage () {
     const parcentText = calculationTotal ();
     const saveField = document.getElementById ('save-input');
     const saveValue = parseFloat (saveField.value);
+	
+    const saveParcent = document.getElementById ('save-parcent');
+    const savePercentText = parseFloat (saveParcent.innerText) 
+	const newSaveParcent = (parcentText/100) * saveValue;
+	saveParcent.innerText = newSaveParcent;
 
-    const saveParcentText = document.getElementById ('save-parcent');
-    saveParcentText.innerText = (parcentText/100) * saveValue;
+	const balanceText = document.getElementById ('total-balance');
+	const newBalance = parseFloat (balanceText.innerText)
+
+	const remainigBalance = document.getElementById ('remaining-balance');
+	remainigBalance.innerText = newBalance - newSaveParcent;
 }
 
 document.getElementById ('save-button').addEventListener ('click', function () {
-
     percantage ();
 })
+
