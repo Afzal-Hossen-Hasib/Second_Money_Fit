@@ -20,3 +20,12 @@ body {
 .input-color {
     background-color: #DCDCDC;
 }
+
+/* Error Handle Style  */
+.error-massage {
+    background-color: aqua;
+    margin-left: 120px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    display: none;
+}
