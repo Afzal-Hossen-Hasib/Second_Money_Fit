@@ -18,6 +18,7 @@ body {
 }
 
 .input-color {
+    width: 75%;
     background-color: #DCDCDC;
 }
 
@@ -28,4 +29,20 @@ body {
     margin-top: 5px;
     margin-bottom: 10px;
     display: none;
+}
+
+.input-container {
+    width: 50%;
+}
+
+
+/* Media Query  */
+@media only screen and (max-width: 720px)  {
+        .input-container {
+            width: 80%;
+        }
+
+        .input-color {
+            width: 60%;
+        }
 }

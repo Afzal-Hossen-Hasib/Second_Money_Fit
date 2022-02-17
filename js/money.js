@@ -71,17 +71,25 @@ const calculateButton = document.getElementById ('caculate-button').addEventList
 	 	// Savaing Amount And Remaing Balance Update 
 const saveButton = document.getElementById ('save-button').addEventListener ('click', function () {
 
-		const totalIncomeText = document.getElementById ('total-balance');
+		const totalIncomeText = inputFeildText ('total-balance');
 		const totalIncomeValue = parseFloat (totalIncomeText.innerText);
+		const savingParcent = document.getElementById ('save-parcent');
 
 		// Saveparcent Update 
 		const saveParcent = inputFieldValue ('save-input');
-		let savingAmount = totalIncomeValue*saveParcent / 100;
-		const savingParcent = document.getElementById ('save-parcent');
-		savingParcent.innerText = savingAmount;
-		
-		// Remaining Balance Update 
 		const remainigBalanceText = document.getElementById ('remaining-balance');
-		remainigBalanceText.innerText =  totalIncomeValue - savingAmount; 
+
+		if (saveParcent <= 100) {
+			let savingAmount = totalIncomeValue*saveParcent / 100;
+			savingParcent.innerText = savingAmount;
+		
+			// Remaining Balance Update 
+			remainigBalanceText.innerText =  totalIncomeValue - savingAmount; 
+		}
+		else {
+			savingParcent.innerText = 'Your Saving Amount must Be Less Than Your Total Amount';
+			remainigBalanceText.innerText = totalIncomeValue;
+		}
+		
 
 	 })
