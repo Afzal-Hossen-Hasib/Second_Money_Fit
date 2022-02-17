@@ -24,28 +24,27 @@ const calculateButton = document.getElementById ('caculate-button').addEventList
 		const foodErrorMessage = inputFeildText ('food-error');
 		const rentErrorMessage = inputFeildText ('rent-error');
 		const coltheErrorMessage = inputFeildText ('clothe-error');
-
-
-		if (incomeValue < 0) {
+		
+		if (incomeValue < 0 || isNaN (incomeValue)) {
 			incomeErrorMessage.style.display = 'inline-block';
 		}
 
-		else if (foodExpenseValue < 0) {
+		else if (foodExpenseValue < 0 || isNaN (foodExpenseValue)) {
 			foodErrorMessage.style.display = 'inline-block';
 		}
 
-		else if (rentExpenseValue < 0) {
+		else if (rentExpenseValue < 0 || isNaN (rentExpenseValue)) {
 			rentErrorMessage.style.display = 'inline-block';
 		}
 
-		else if (clotheExpenseValue < 0) {
+		else if (clotheExpenseValue < 0 || isNaN (clotheExpenseValue)) {
 			coltheErrorMessage.style.display = 'inline-block';
 		}
 		
 		else {
 			//  Total Expense Update 
 		 	const expenseTotalText = inputFeildText ('total-expense');
-			 const incomeFeildText = document.getElementById ('total-balance');
+			const incomeFeildText = document.getElementById ('total-balance');
 
 			 const expense = parseFloat (expenseTotalText)
 
@@ -63,7 +62,6 @@ const calculateButton = document.getElementById ('caculate-button').addEventList
 
 			else {
 				expenseTotalText.innerText = 'Your Expense Should Be Less Than Your Income';
-			
 			}
 		}
 	 })
@@ -79,17 +77,24 @@ const saveButton = document.getElementById ('save-button').addEventListener ('cl
 		const saveParcent = inputFieldValue ('save-input');
 		const remainigBalanceText = document.getElementById ('remaining-balance');
 
-		if (saveParcent <= 100) {
+		if (saveParcent <= 100 && saveParcent > 0) {
 			let savingAmount = totalIncomeValue*saveParcent / 100;
 			savingParcent.innerText = savingAmount;
 		
 			// Remaining Balance Update 
 			remainigBalanceText.innerText =  totalIncomeValue - savingAmount; 
 		}
+
 		else {
-			savingParcent.innerText = 'Your Saving Amount must Be Less Than Your Total Amount';
+
+			if (isNaN (saveParcent)) {
+				savingParcent.innerText = 'Please Enter A Poitive Value';
+			}
+		
+			else {
+				savingParcent.innerText = 'Your Saving Amount must Be Less Than Your Total Amount';
+			}
+			
 			remainigBalanceText.innerText = totalIncomeValue;
 		}
-		
-
 	 })
