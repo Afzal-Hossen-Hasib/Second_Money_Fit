@@ -1,9 +1,9 @@
 // All Input Function 
 function inputFieldValue (inputExpenseId) {
-	const expenseField = document.getElementById (inputExpenseId);
-	const expenseText = parseFloat (expenseField.value);
-	expenseField.value = '';
-	return expenseText;
+	const inputField = document.getElementById (inputExpenseId);
+	const inputText = parseFloat (inputField.value);
+	inputField.value = '';
+	return inputText;
 }
 
 // All Text Function 
@@ -42,11 +42,10 @@ const calculateButton = document.getElementById ('caculate-button').addEventList
 		}
 		
 		else {
+
 			//  Total Expense Update 
 		 	const expenseTotalText = inputFeildText ('total-expense');
 			const incomeFeildText = document.getElementById ('total-balance');
-
-			 const expense = parseFloat (expenseTotalText)
 
 				const expenseTotal = foodExpenseValue + rentExpenseValue + clotheExpenseValue;
 				expenseTotalText.innerText = expenseTotal;
@@ -56,6 +55,7 @@ const calculateButton = document.getElementById ('caculate-button').addEventList
 			 	rentErrorMessage.style.display = 'none';
 			 	coltheErrorMessage.style.display = 'none';
 
+				// Total Balance Update 
 			if (incomeValue > expenseTotal) {
 				incomeFeildText.innerText = incomeValue - expenseTotal;
 			}

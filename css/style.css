@@ -24,6 +24,7 @@ body {
 .input-color {
     width: 75%;
     background-color: #DCDCDC;
+    box-shadow: 5px 5px 10px #888888;
 }
 
 /* Error Handle Style  */
@@ -33,6 +34,9 @@ body {
     margin-top: 5px;
     margin-bottom: 10px;
     display: none;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 5px 5px 10px #888888;
 }
 
 /* Media Query  */
