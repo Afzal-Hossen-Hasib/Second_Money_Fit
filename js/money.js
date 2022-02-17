@@ -1,53 +1,50 @@
-// Calculate Button Function 
-function calculationTotal () {
-
-    const incomeField = document.getElementById ('income-field');
-    const incomeValue = parseFloat (incomeField.value);
-    
-    const foodField = document.getElementById ('food-field');
-    const foodValue = parseFloat (foodField.value);
-
-    const rentField = document.getElementById ('rent-field');
-    const rentValue = parseFloat (rentField.value);
-
-    const clotheField = document.getElementById ('clothe-field');
-    const clotheValue = parseFloat (clotheField.value);
-
-    const total = incomeValue - (foodValue + rentValue + clotheValue);
-
-    const expenseText = document.getElementById ('total-expense');
-    expenseText.innerText = foodValue + rentValue + clotheValue;
-	
-    const balanceText = document.getElementById ('total-balance');
-    balanceText.innerText = total;
-    
-    return total;
+// All Input Function 
+function inputFieldValue (inputExpenseId) {
+	const expenseField = document.getElementById (inputExpenseId);
+	const expenseText = parseFloat (expenseField.value);
+	expenseField.value = '';
+	return expenseText;
 }
+
+// All Text Function 
+function inputFeildText (inputText) {
+	const valueText = document.getElementById (inputText);
+	// const amountText = valueText.innerText;
+	return valueText;
+}
+
+		// Total Expenses And Total Income Update 
 const calculateButton = document.getElementById ('caculate-button').addEventListener ('click', function () {
-    calculationTotal ();
-    
-})
+	    
+		const foodExpenseValue = inputFieldValue ('food-field');
+		const rentExpenseValue = inputFieldValue ('rent-field');
+		const clotheExpenseValue = inputFieldValue ('clothe-field');
 
+		// Total Expense Update 
+		let expenseTotalText = inputFeildText ('total-expense');
+		expenseTotalText.innerText = foodExpenseValue + rentExpenseValue + clotheExpenseValue;
+		
+		// Total Balance Update 
+		const incomeValue = inputFieldValue ('income-field');
+		const incomeFeildText = document.getElementById ('total-balance');
+		incomeFeildText.innerText = incomeValue - (foodExpenseValue + rentExpenseValue + clotheExpenseValue);
 
-function percantage () {
+	 })
 
-    const parcentText = calculationTotal ();
-    const saveField = document.getElementById ('save-input');
-    const saveValue = parseFloat (saveField.value);
-	
-    const saveParcent = document.getElementById ('save-parcent');
-    const savePercentText = parseFloat (saveParcent.innerText) 
-	const newSaveParcent = (parcentText/100) * saveValue;
-	saveParcent.innerText = newSaveParcent;
+	 	// Savaing Amount And Remaing Balance Update 
+const saveButton = document.getElementById ('save-button').addEventListener ('click', function () {
 
-	const balanceText = document.getElementById ('total-balance');
-	const newBalance = parseFloat (balanceText.innerText)
+		const totalIncomeText = document.getElementById ('total-balance');
+		const totalIncomeValue = parseFloat (totalIncomeText.innerText);
 
-	const remainigBalance = document.getElementById ('remaining-balance');
-	remainigBalance.innerText = newBalance - newSaveParcent;
-}
+		// Saveparcent Update 
+		const saveParcent = inputFieldValue ('save-input');
+		let savingAmount = totalIncomeValue*saveParcent / 100;
+		const savingParcent = document.getElementById ('save-parcent');
+		savingParcent.innerText = savingAmount;
+		
+		// Remaining Balance Update 
+		const remainigBalanceText = document.getElementById ('remaining-balance');
+		remainigBalanceText.innerText =  totalIncomeValue - savingAmount; 
 
-document.getElementById ('save-button').addEventListener ('click', function () {
-    percantage ();
-})
-
+	 })
